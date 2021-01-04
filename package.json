@@ -26,7 +26,8 @@
     "particles.js": "^2.0.0",
     "sass": "^1.32.0",
     "sass-loader": "^10.1.0",
-    "vue-slick": "^1.1.15"
+    "vue-slick": "^1.1.15",
+    "webfontloader": "^1.6.28"
   },
   "eslintConfig": {
     "root": true,

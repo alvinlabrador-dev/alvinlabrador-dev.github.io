@@ -1,7 +1,5 @@
 <template>
-  <div id="particles-js">
-
-  </div>
+  <div id="particles-js"></div>
 </template>
 
 <script>
@@ -12,13 +10,12 @@ export default {
   name: 'Particles',
   methods: {
     initParticlesJS() {
-      console.log('particles: ', window.particlesJS)
       window.particlesJS("particles-js", particlesJson);
     }
   },
   mounted() {
     this.initParticlesJS();
-  }
+  },
 }
 </script>
 
