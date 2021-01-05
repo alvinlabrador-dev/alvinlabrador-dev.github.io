@@ -1,19 +1,27 @@
 <template>
   <section id="intro" class="intro">
     <div class="intro-content" ref="intro-content">
-      <span class="intro-deco">{{ decoText }}</span>
-      <h1 class="intro-heading" :data-heading="heading">{{ heading }}</h1>
-      <h2 class="intro-subheading" >{{ subHeading }}</h2>
-      <a :href="sectionTarget" class="intro-arrow">
+      <div class="intro-deco--wrap" ref="intro-deco" data-depth="0.2">
+        <span class="intro-deco">{{ decoText }}</span>
+      </div>
+      <div class="parallax-section" ref="intro-heading" data-depth="0.1">
+        <h1 class="intro-heading"  :data-heading="heading">{{ heading }}</h1>
+      </div>
+      <div class="parallax-section" ref="intro-subheading" data-depth="0.4">
+        <h2 class="intro-subheading">{{ subHeading }}</h2>
+      </div>
+      <a :href="sectionTarget" class="intro-arrow" ref="intro-arrow" data-depth="0">
         <svg xmlns="http://www.w3.org/2000/svg" width="26.196" height="24.935" viewBox="0 0 26.196 24.935">
           <path id="Path_1" data-name="Path 1" d="M27.088-11.837a2.236,2.236,0,0,0-.622-1.53L25.2-14.628a2.236,2.236,0,0,0-1.53-.622,2.165,2.165,0,0,0-1.513.622L17.218-9.685V-21.522a2.167,2.167,0,0,0-2.152-2.152H12.913a2.167,2.167,0,0,0-2.152,2.152V-9.685L5.818-14.628A2.165,2.165,0,0,0,4.3-15.25a2.236,2.236,0,0,0-1.53.622L1.53-13.367a2.178,2.178,0,0,0-.639,1.53,2.11,2.11,0,0,0,.639,1.513L12.476.639a2.165,2.165,0,0,0,1.513.622,2.236,2.236,0,0,0,1.53-.622L26.465-10.324A2.165,2.165,0,0,0,27.088-11.837Z" transform="translate(-0.891 23.674)" fill="#fff"/>
         </svg>
       </a>
     </div>
+    
   </section>
 </template>
 
 <script>
+import Parallax from "parallax-js"
 export default {
   props: {
     decoText: {
@@ -39,8 +47,33 @@ export default {
     }
   },
   mounted() {
-    
+    // trigger parallax scene
+    setTimeout(() => {
+      this.triggerScene();
+    }, 2000);
   },
+  methods: {
+    triggerScene() {
+      const scene = this.$refs['intro-content'];
+      const parallaxInstance = new Parallax(scene, {
+        relativeInput: true,
+        pointerEvents: true
+      });
+      parallaxInstance.friction(0.2, 0.2);
+      this.removeStyles();
+    },
+    removeStyles() {
+      // remove added unecessary styles from parallax-js
+      const refs = this.$refs;
+
+      for(let ref in refs) {
+        refs[ref].style.removeProperty('display');
+        refs[ref].style.removeProperty('top');
+        refs[ref].style.removeProperty('left');
+        refs[ref].style.removeProperty('position');
+      }
+    },
+  }
 }
 </script>
 
@@ -74,11 +107,14 @@ export default {
       font-size: 1.5rem;
       @include font-bold;
       text-transform: none;
-      position: absolute;
-      top: -2.2rem;
-      left: -1.8rem;
-      z-index: 4;
       animation: zoomDrop .5s ease-out forwards;
+
+      &--wrap {
+        position: absolute;
+        top: -2.2rem;
+        left: -1.8rem;
+        z-index: 4;
+      }
 
       @media screen and (max-height: 414px) {
         width: 10vh;
