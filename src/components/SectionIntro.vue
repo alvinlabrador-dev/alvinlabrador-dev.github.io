@@ -10,13 +10,12 @@
       <div class="parallax-section" ref="intro-subheading" data-depth="0.4">
         <h2 class="intro-subheading">{{ subHeading }}</h2>
       </div>
-      <a :href="sectionTarget" class="intro-arrow" ref="intro-arrow" data-depth="0">
-        <svg xmlns="http://www.w3.org/2000/svg" width="26.196" height="24.935" viewBox="0 0 26.196 24.935">
-          <path id="Path_1" data-name="Path 1" d="M27.088-11.837a2.236,2.236,0,0,0-.622-1.53L25.2-14.628a2.236,2.236,0,0,0-1.53-.622,2.165,2.165,0,0,0-1.513.622L17.218-9.685V-21.522a2.167,2.167,0,0,0-2.152-2.152H12.913a2.167,2.167,0,0,0-2.152,2.152V-9.685L5.818-14.628A2.165,2.165,0,0,0,4.3-15.25a2.236,2.236,0,0,0-1.53.622L1.53-13.367a2.178,2.178,0,0,0-.639,1.53,2.11,2.11,0,0,0,.639,1.513L12.476.639a2.165,2.165,0,0,0,1.513.622,2.236,2.236,0,0,0,1.53-.622L26.465-10.324A2.165,2.165,0,0,0,27.088-11.837Z" transform="translate(-0.891 23.674)" fill="#fff"/>
-        </svg>
-      </a>
     </div>
-    
+    <a :href="sectionTarget" class="intro-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26.196" height="24.935" viewBox="0 0 26.196 24.935">
+        <path id="Path_1" data-name="Path 1" d="M27.088-11.837a2.236,2.236,0,0,0-.622-1.53L25.2-14.628a2.236,2.236,0,0,0-1.53-.622,2.165,2.165,0,0,0-1.513.622L17.218-9.685V-21.522a2.167,2.167,0,0,0-2.152-2.152H12.913a2.167,2.167,0,0,0-2.152,2.152V-9.685L5.818-14.628A2.165,2.165,0,0,0,4.3-15.25a2.236,2.236,0,0,0-1.53.622L1.53-13.367a2.178,2.178,0,0,0-.639,1.53,2.11,2.11,0,0,0,.639,1.513L12.476.639a2.165,2.165,0,0,0,1.513.622,2.236,2.236,0,0,0,1.53-.622L26.465-10.324A2.165,2.165,0,0,0,27.088-11.837Z" transform="translate(-0.891 23.674)" fill="#fff"/>
+      </svg>
+    </a>
   </section>
 </template>
 
@@ -181,12 +180,13 @@ export default {
       }
 
       @media screen and (min-width: 768px) {
-        position: relative;
-        margin: 0 auto;
-        top: 6rem;
-        left: 0;
+        margin: 0 0 0 -2rem;
         width: 4rem;
         height: 4rem;
+      }
+
+      @media screen and (min-width: 768px) and (min-height: 550px) {
+        bottom: 10rem;
       }
 
       svg {
