@@ -10,37 +10,11 @@
 }
 
 @mixin accent-shadow($amount: 0.1, $box: false) {
-  &::before,
-  &::after {
-    display: block;
-    position: absolute;
-    content: attr(data-heading);
-    text-align: center;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    opacity: 0.9;
-    border-radius: inherit;
-  }
-
-  &::before {
-    margin-left: -#{$amount}em;
-    margin-top: #{$amount}em;
-    color: $accent-blue;
-
-    @if $box == true {
-      background: $accent-blue;
-    }
-  }
-
-  &::after {
-    margin-left: #{$amount}em;
-    margin-top: -#{$amount}em;
-    color: $accent-pink;
-
-    @if $box == true {
-      background: $accent-pink;
-    }
+  @if $box == true {
+    box-shadow: #{$amount}em -#{$amount}em $accent-pink-rgb,
+      -#{$amount}em #{$amount}em $accent-blue-rgb;
+  } @else {
+    text-shadow: #{$amount}em -#{$amount}em $accent-pink-rgb,
+      -#{$amount}em #{$amount}em $accent-blue-rgb;
   }
 }

@@ -5,7 +5,7 @@
         <span class="intro-deco">{{ decoText }}</span>
       </div>
       <div class="parallax-section" ref="intro-heading" data-depth="0.1">
-        <h1 class="intro-heading"  :data-heading="heading">{{ heading }}</h1>
+        <h1 class="intro-heading">{{ heading }}</h1>
       </div>
       <div class="parallax-section" ref="intro-subheading" data-depth="0.4">
         <h2 class="intro-subheading">{{ subHeading }}</h2>
@@ -84,6 +84,7 @@ export default {
     padding: 2rem;
     @include font-bold;
     text-transform: uppercase;
+    position: relative;
 
     &-content {
       position: relative;
@@ -165,7 +166,7 @@ export default {
       @include flex-center;
       width: 3.125rem;
       height: 3.125rem;
-      position: fixed;
+      position: absolute;
       bottom: 3rem;
       left: 50%;
       margin: 0 0 0 -1.5625rem;
@@ -173,6 +174,8 @@ export default {
       border: .4rem solid rgba(255,204,0, 0);
       box-shadow: 0 0 0 .4rem rgba(255,204,0, .4);
       transition: .5s;
+      opacity: 0;
+      animation: fadeInTop .5s 1.2s ease-out forwards;
 
       &:hover {
         box-shadow: 0 0 0 2rem rgba(255,255,255, 0);
