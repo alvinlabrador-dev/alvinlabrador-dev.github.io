@@ -32,6 +32,25 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,.05);
+      box-shadow: inset 0 0 10px 10px rgba(255,255,255,.05);
+      transform: skewY(5deg);
+      position: absolute;
+      z-index: -1;
+    }
+
+    &::after {
+      transform: skewY(10deg);
+      // background: rgba(0,0,0,.05);
+    }
 
     &-heading {
       font-size: 1.875rem;

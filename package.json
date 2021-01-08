@@ -13,7 +13,8 @@
     "core-js": "^3.6.5",
     "gh-pages": "^3.1.0",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.1"
+    "vue-router": "^4.0.1",
+    "vue3-carousel": "^0.1.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -27,7 +28,6 @@
     "particles.js": "^2.0.0",
     "sass": "^1.32.0",
     "sass-loader": "^10.1.0",
-    "vue-slick": "^1.1.15",
     "webfontloader": "^1.6.28"
   },
   "eslintConfig": {

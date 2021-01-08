@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(45deg, $gradient-from, $gradient-to);
+  background-attachment: fixed;
+  font-family: $font;
+  color: $white;
+}
+
+#app {
+  min-height: 100vh;
+  z-index: 2;
+  position: relative;
+}
+
+.bold {
+  @include font-bold;
+}

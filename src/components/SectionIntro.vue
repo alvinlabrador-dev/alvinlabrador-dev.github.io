@@ -163,44 +163,22 @@ export default {
     }
 
     &-arrow {
-      @include flex-center;
-      width: 3.125rem;
-      height: 3.125rem;
+      @include arrow-link;
       position: absolute;
       bottom: 3rem;
       left: 50%;
       margin: 0 0 0 -1.5625rem;
-      border-radius: 50rem;
-      border: .4rem solid rgba(255,204,0, 0);
-      box-shadow: 0 0 0 .4rem rgba(255,204,0, .4);
-      transition: .5s;
       opacity: 0;
       animation: fadeInTop .5s 1.2s ease-out forwards;
 
-      &:hover {
-        box-shadow: 0 0 0 2rem rgba(255,255,255, 0);
-        border: .4rem solid rgba(255,204,0, .4);
-      }
-
       @media screen and (min-width: 768px) {
         margin: 0 0 0 -2rem;
-        width: 4rem;
-        height: 4rem;
       }
 
       @media screen and (min-width: 768px) and (min-height: 550px) {
         bottom: 10rem;
       }
 
-      svg {
-        width: 1.25rem;
-        height: 1.25rem;
-
-        @media screen and (min-width: 768px) {
-          width: 1.5625rem;
-          height: 1.5625rem;
-        }
-      }
     }
   }
 </style>
