@@ -1,0 +1,12 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_animation.scss";
+@import "./_global.scss";
+@import "./_buttons.scss";
+
+// glidejs
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
+//  sections
+@import "./sections/_intro.scss";
+@import "./sections/_about.scss";
