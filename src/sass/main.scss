@@ -4,9 +4,11 @@
 @import "./_global.scss";
 @import "./_buttons.scss";
 
-// glidejs
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+// embla slide
+@import "./sections/embla-slide";
 
 //  sections
-@import "./sections/_intro.scss";
-@import "./sections/_about.scss";
+@import "./sections/intro";
+@import "./sections/about";
+@import "./sections/projects";
+@import "./sections/contact";

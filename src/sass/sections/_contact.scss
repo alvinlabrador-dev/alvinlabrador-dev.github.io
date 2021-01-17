@@ -1,0 +1,30 @@
+.contact {
+  @include flex-center;
+  height: 100vh;
+  padding: 10vw 9vw;
+
+  &__content {
+    max-width: 100%;
+  }
+
+  &__form {
+    padding: 1.2rem 0 0;
+
+    &--wrapper {
+      text-align: right;
+      line-height: 1.5;
+    }
+  }
+
+  &__heading {
+    font-size: 1.875rem;
+    text-transform: uppercase;
+    @include accent-shadow;
+    @include font-bold;
+    margin: 0 0 1rem;
+
+    @media screen and (min-width: 768px) and (min-width: 600px) {
+      font-size: 3rem;
+    }
+  }
+}
