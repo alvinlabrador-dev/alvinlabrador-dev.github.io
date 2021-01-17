@@ -582,6 +582,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   padding: 2rem 2rem 5rem;
+  position: relative;
 }
 .contact::before, .contact::after {
   content: "";
