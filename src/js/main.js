@@ -49,3 +49,49 @@ const disablePrevAndNextBtns = disablePrevNextBtns(prevBtn, nextBtn, embla)
 setupPrevNextBtns(prevBtn, nextBtn, embla)
 embla.on("init", disablePrevAndNextBtns)
 embla.on("select", disablePrevAndNextBtns)
+
+// contact section
+const form = document.getElementById("contact-form")
+const button = document.getElementById("contact_form_btn")
+const status = document.getElementById("contact_form_status")
+const btnText = "Send Message"
+
+function success() {
+  form.reset()
+  button.disabled = true
+  status.innerHTML = "Message Sent!"
+  button.classList.remove("contact__form--btn--loading")
+  button.innerHTML = btnText
+}
+
+function error() {
+  status.innerHTML = "Oops! There was a problem."
+  button.classList.remove("contact__form--btn--loading")
+  button.innerHTML = btnText
+}
+
+form.addEventListener("submit", function (ev) {
+  ev.preventDefault()
+  const data = new FormData(form)
+  button.classList.add("contact__form--btn--loading")
+  button.innerHTML = "Loading..."
+  status.innerHTML = ""
+  ajax(form.method, form.action, data, success, error)
+})
+
+// helper function for sending an AJAX request
+
+function ajax(method, url, data, success, error) {
+  const xhr = new XMLHttpRequest()
+  xhr.open(method, url)
+  xhr.setRequestHeader("Accept", "application/json")
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState !== XMLHttpRequest.DONE) return
+    if (xhr.status === 200) {
+      success(xhr.response, xhr.responseType)
+    } else {
+      error(xhr.status, xhr.response, xhr.responseType)
+    }
+  }
+  xhr.send(data)
+}

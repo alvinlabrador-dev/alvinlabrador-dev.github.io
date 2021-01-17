@@ -19,6 +19,7 @@
     @include font-bold;
     @include accent-shadow(0.3, true);
     margin: 0 1.2rem 2rem;
+    font-size: 1rem;
 
     @media screen and (min-width: 768px) {
       margin-bottom: 4rem;
