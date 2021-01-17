@@ -1,0 +1,102 @@
+.intro {
+  height: 100vh;
+  @include flex-center;
+  text-align: center;
+  padding: 2rem;
+  @include font-bold;
+  text-transform: uppercase;
+  position: relative;
+
+  &__content {
+    position: relative;
+    display: inline-block;
+    margin-top: -20vh;
+
+    @media screen and (min-width: 1440px) {
+      margin-top: -10vh;
+    }
+  }
+
+  &__greet {
+    min-width: 4.1rem;
+    min-height: 4.1rem;
+    border-radius: 100%;
+    @include flex-center;
+    background: $cta-rgb;
+    transform: rotate(-15deg);
+    color: $grey;
+    font-size: 1.5rem;
+    @include font-bold;
+    text-transform: none;
+    animation: zoomDrop 0.5s ease-out forwards;
+
+    &--wrap {
+      position: absolute;
+      top: -2.2rem;
+      left: -1.8rem;
+      z-index: 4;
+    }
+
+    @media screen and (max-height: 414px) {
+      width: 10vh;
+      height: 10vh;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 5rem;
+      height: 5rem;
+      font-size: 2.3rem;
+    }
+  }
+
+  &__heading {
+    font-size: 3rem;
+    margin: 0 0 0.2rem;
+    position: relative;
+    @include accent-shadow;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: revealFromleft 0.8s 0.3s ease-out forwards;
+
+    @media screen and (min-width: 360px) {
+      font-size: 3.5rem;
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 6rem;
+    }
+  }
+
+  &__subheading {
+    font-size: 0.8rem;
+    background: $scarlet;
+    display: inline-block;
+    padding: 0.5rem;
+    opacity: 0;
+    transform: skewX(-10deg) translateX(1rem);
+    animation: fromLeft 0.5s 1.2s cubic-bezier(0.35, 0.58, 0, 1.57) forwards;
+
+    @media screen and (min-width: 768px) {
+      font-size: 1.4rem;
+      transform: skewX(-10deg) translateX(2rem);
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    margin: 0 0 0 -1.5625rem;
+    opacity: 0;
+    animation: fadeInTop 0.5s 1.2s ease-out forwards;
+
+    @media screen and (min-width: 768px) {
+      margin: 0 0 0 -2rem;
+    }
+
+    @media screen and (min-width: 768px) and (min-height: 550px) {
+      bottom: 10rem;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(45deg, $gradient-from, $gradient-to);
+  background-attachment: fixed;
+  font-family: $font;
+  color: $white;
+}
+
+.main {
+  min-height: 100vh;
+  z-index: 2;
+  position: relative;
+}
+
+.bold {
+  @include font-bold;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}

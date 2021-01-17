@@ -1,0 +1,56 @@
+.btn {
+  display: block;
+  width: 15.625rem;
+  padding: 0.9375rem 1.25rem;
+  text-align: center;
+  @include font-bold;
+  color: $grey;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: $cta;
+  transition: 0.5s;
+  border: 0.25rem solid transparent;
+
+  @media screen and (min-width: 700px) {
+    font-size: 0.8rem;
+    width: 13.125rem;
+    margin-right: 0.8rem;
+  }
+
+  @media screen and (min-width: 992px) and (min-width: 600px) {
+    font-size: 1.1rem;
+    width: 100%;
+  }
+
+  &:hover {
+    background: $grey;
+    color: $cta;
+  }
+
+  &--bordered {
+    border-color: $cta;
+    background: none;
+  }
+
+  &--shadow-accent {
+    @include accent-shadow(0.3, true);
+    background: $grey;
+    color: $white;
+
+    &:hover {
+      @include accent-shadow(0.6, true);
+      color: $white;
+    }
+  }
+
+  // button circle
+  &--circle {
+    background: none;
+    @include arrow-link;
+    padding: 0;
+
+    &:hover {
+      background: none;
+    }
+  }
+}

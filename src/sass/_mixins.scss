@@ -1,0 +1,47 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin font-bold {
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
+}
+
+@mixin accent-shadow($amount: 0.1, $box: false) {
+  @if $box == true {
+    box-shadow: #{$amount}em -#{$amount}em $accent-pink-rgb,
+      -#{$amount}em #{$amount}em $accent-blue-rgb;
+  } @else {
+    text-shadow: #{$amount}em -#{$amount}em $accent-pink-rgb,
+      -#{$amount}em #{$amount}em $accent-blue-rgb;
+  }
+}
+
+@mixin arrow-link($color: $cta, $textColor: $white, $opacity: 0.4) {
+  @include flex-center;
+  width: 3.125rem;
+  height: 3.125rem;
+  font-size: 1.25rem;
+  border-radius: 50rem;
+  border: 0.4rem solid rgba($color, 0);
+  box-shadow: 0 0 0 0.4rem rgba($color, 0.4);
+  transition: 0.5s;
+  color: #{$textColor};
+
+  &:hover {
+    box-shadow: 0 0 0 2rem rgba(255, 255, 255, 0);
+    border: 0.4rem solid rgba($color, 0.4);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.5625rem;
+  }
+
+  svg {
+    transform-origin: center;
+  }
+}
