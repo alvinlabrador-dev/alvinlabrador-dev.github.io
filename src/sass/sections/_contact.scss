@@ -2,6 +2,7 @@
   @include flex-center;
   min-height: 100vh;
   padding: 2rem 2rem 5rem;
+  position: relative;
 
   &::before,
   &::after {
